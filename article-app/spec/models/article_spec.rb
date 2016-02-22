@@ -10,4 +10,14 @@ RSpec.describe Article, type: :model do
     article = build :article, :unpublished
     expect(article.published).to eq false
   end
+
+  it 'should create an published article' do
+    article = create :article, :published
+    expect(Article.count).to eq 1
+  end
+
+  it 'should create an unpublished article' do
+    article = create :article, :unpublished
+    expect(Article.count).to eq 1
+  end
 end
